@@ -1,0 +1,19 @@
+{
+  "name": "yolla",
+  "version": "2.0.0",
+  "description": "Arkadaşlarına internet üzerinden anında dosya gönder",
+  "main": "main.js",
+  "author": "Yolla",
+  "license": "MIT",
+  "scripts": { "start": "electron .", "dist": "electron-builder" },
+  "devDependencies": { "electron": "^33.0.0", "electron-builder": "^25.0.0" },
+  "build": {
+    "appId": "com.yolla.app",
+    "productName": "Yolla",
+    "files": ["main.js", "preload.js", "index.html", "config.js"],
+    "win": { "target": "nsis" },
+    "nsis": { "oneClick": true, "perMachine": false, "createDesktopShortcut": true, "runAfterFinish": true },
+    "mac": { "target": "dmg" },
+    "linux": { "target": "AppImage" }
+  }
+}
